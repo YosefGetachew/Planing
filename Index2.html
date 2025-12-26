@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>የግብርና ሴክተር ተጠሪ ተቋማት የትራንስፎርሜሽን ሪፎርም ዕቅድ አፈጻጸም መከታተያ</title>
+  <style>
+    /* General styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      color: black;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Full background image */
+    .bg-img {
+      background-image: url("https://images.pexels.com/photos/440731/pexels-photo-440731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px;
+      box-sizing: border-box; /* Include padding in the element's total width and height */
+    }
+
+    /* Header styles */
+    h2 {
+      color: white;
+      background-color: #4CAF50; /* Green background for the main title */
+      padding: 15px 20px;
+      border-radius: 5px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    p.instruction {
+      color: white;
+      background-color: rgba(0, 0, 0, 0.7); /* Slightly darker overlay for instruction */
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 1.1em;
+    }
+
+    /* Tab container for buttons */
+    .tab {
+      display: flex;
+      flex-wrap: wrap; /* Allows buttons to wrap to the next line */
+      justify-content: center;
+      gap: 10px; /* Space between buttons */
+      margin: 20px 0;
+      padding: 10px;
+      background-color: rgba(241, 241, 241, 0.95); /* Light, semi-transparent background */
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      max-width: 90%;
+      width: 100%;
+    }
+
+    .tab button {
+      background-color: #f9f9f9;
+      color: #333;
+      border: 1px solid #ddd;
+      outline: none;
+      cursor: pointer;
+      padding: 12px 18px;
+      font-size: 14px;
+      transition: 0.3s;
+      flex: 1 1 200px; /* Allow buttons to grow and have a minimum width */
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    .tab button:hover {
+      background-color: #e0e0e0;
+    }
+
+    .tab button.active {
+      background-color: #4CAF50;
+      color: white;
+      border-color: #4CAF50;
+      font-weight: bold;
+    }
+
+    /* Tab content container */
+    .tabcontent {
+      display: none;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      margin: 10px;
+      border-radius: 8px;
+      max-width: 90%;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      text-align: center;
+    }
+
+    .tabcontent h3 {
+      color: #333;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+
+    .tabcontent p {
+      color: #555;
+      background-color: transparent; /* Override the default p style */
+      padding: 0;
+      font-size: 1em;
+      margin: 15px 0;
+    }
+
+    .tabcontent a {
+      background-color: #0078D4; /* OneDrive/Microsoft Blue */
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 20px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .tabcontent a:hover {
+      background-color: #005A9E;
+    }
+
+    /* Media Query for smaller screens */
+    @media (max-width: 600px) {
+      .tab button {
+        flex: 1 1 100%; /* Buttons take full width on small screens */
+        font-size: 16px;
+      }
+      .bg-img {
+        padding: 10px;
+      }
+      .tabcontent {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-img">
+    <h2 title="Tracking Sheet for the Transformation Reform Plan Implementation of Institutions Accountable to the Agricultural Sector">
+      የግብርና ሴክተር ተጠሪ ተቋማት የትራንስፎርሜሽን ሪፎርም ዕቅድ አፈጻጸም መከታተያ
+    </h2>
+    <p class="instruction">Click on the buttons below to access your sector's tracking sheet:</p>
+
+    <div class="tab">
+      <button class="tablinks" onclick="openInst(event, 'ግብርና ሚኒስቴር')">ግብርና ሚኒስቴር</button>
+      <button class="tablinks" onclick="openInst(event, 'ቡናና ሻይ ባለሥልጣን')">ቡናና ሻይ ባለሥልጣን</button>
+      <button class="tablinks" onclick="openInst(event, 'ግብርና ምርምር')">ግብርና ምርምር</button>
+      <button class="tablinks" onclick="openInst(event, 'ግብርና ባለስልጣን')">ግብርና ባለስልጣን</button>
+      <button class="tablinks" onclick="openInst(event, 'ህብረት ስራ')">ህብረት ስራ</button>
+      <button class="tablinks" onclick="openInst(event, 'ብዝሀ ሕይወት')">ብዝሀ ሕይወት</button>
+      <button class="tablinks" onclick="openInst(event, 'እንስሳት ልማት')">እንስሳት ልማት</button>
+      <button class="tablinks" onclick="openInst(event, 'ደን ልማት')">ደን ልማት</button>
+      <button class="tablinks" onclick="openInst(event, 'የግብርና ትራንስፎርሜሽን')">የግብርና ትራንስፎርሜሽን</button>
+      <button class="tablinks" onclick="openInst(event, 'የእንስሳት ጤና')">የእንስሳት ጤና</button>
+    </div>
+
+    <div id="ግብርና ሚኒስቴር" class="tabcontent">
+      <h3>ግብርና ሚኒስቴር (Ministry of Agriculture)</h3>
+      <p>This link is authorized to only "የኢትዮጵያ ግብርና ሚኒስቴር (ጌታነህ ገብረማርያም 0913818161 getaneh2111@gmail.com)"</p>
+      <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/ESTEc1QFFWJPuDHRSlolSWsBF363C-b7-6zEHeT4_zUGKg?e=1mYMNE" target="_blank" rel="noopener noreferrer">Open OneDrive Link 🔒</a>
+    </div>
+
+    <div id="ቡናና ሻይ ባለሥልጣን" class="tabcontent">
+      <h3>ቡናና ሻይ ባለሥልጣን (Coffee and Tea Authority)</h3>
+      <p>This link is authorized to only "የኢትዮጵያ ቡናና ሻይ ባለሥልጣን (ስንታየሁ ግርማ 0900065962 sintayehugirma76@gmail.com)"</p>
+      <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/EXrJ7Lc6vjZKoRvg5dh6ftsBaJz9ZA3k9lzVzbc44H7yIg" target="_blank" rel="noopener noreferrer">Open OneDrive Link 🔒</a>
+    </div>
+
+    <div id="ግብርና ምርምር" class="tabcontent">
+      <h3>ግብርና ምርምር (Agricultural Research)</h3>
+      <p>This link is authorized to only "የኢትዮጵያ ግብርና ምርምር ኢንስቲትዩት (አለሙ አስረስ 0911874066 alemuasres2016@gmail.com)"</p>
+      <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/EQlcBEho6RZLihb7iWOX5roBYIPJcQR3zxMZdd-EicJmHA" target="_blank" rel="noopener noreferrer">Open OneDrive Link 🔒</a>
+    </div>
+
+    <div id="ግብርና ባለስልጣን" class="tabcontent">
+      <h3>ግብርና ባለስልጣን (Agricultural Authority)</h3>
+      <p>This link is authorized to only "የኢትዮጵያ ግብርና ባለስልጣን የግብርና ሬጉላቶሪ (አንማው ልንገረው 0924424072 animawyehenaw0@gmail.com)"</p>
+      <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/EYMvJMBn3BZNvgDcPsT_1CUBTiklddvAZzysjVITOMTGAA" target="_blank" rel="noopener noreferrer">Open OneDrive Link 🔒</a>
+    </div>
+
+    <div id="ህብረት ስራ" class="tabcontent">
+      <h3>ህብረት ስራ (Cooperative)</h3>
+      <p>This link is authorized to only "የኢትዮጵያ ኅብረት ስራ ኮሚሽን (አያልሰው ወርቅነህ 911060923 ayalseww@gmail.com)"</p>
+      <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/EUtXbb6Uig1BjUcUW2l0QoIBOx7EhcT7Tf5F6qurIMnTEQ?e=KQ2JuN" target="_blank" rel="noopener noreferrer">Open OneDrive Link 🔒</a>
+    </div>
+
+    <div id="ብዝሀ ሕይወት" class="tabcontent">
+      <h3>ብዝሀ ሕይወት (Biodiversity)</h3>
+      <p>This link is authorized to only "የኢትዮጵያ ብዝሀ ህይወት ኢንስቲትዩት (Aberaham Assfa  (abiab1975@gmail.com 0911464607 and Hiwot befekadu hiwotnew@gmail.com 0947902848))</p>
+      <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/ETHJCIwAOe5GtPpZVElNDCwBXr1QXdr4ZTcL5Kt1WyFtAQ" target="_blank" rel="noopener noreferrer">Open OneDrive Link 🔒</a>
+    </div>
+
+    <div id="እንስሳት ልማት" class="tabcontent">
+      <h3>እንስሳት ልማት (Livestock Development)</h3>
+      <p>This link is authorized to only "የኢትዮጵያ እንስሳት ልማት ኢንስቲትዩት (ታምሩ ነገራ 0911482605 tnegera@yahoo.com)"</p>
+      <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/EUJ3lf9r9jxMlmnQjCGWDSkBQa-BkGtkJTtkxRmIUUm24Q?e=vQMQyd" target="_blank" rel="noopener noreferrer">Open OneDrive Link 🔒</a>
+    </div>
+
+    <div id="ደን ልማት" class="tabcontent">
+      <h3>ደን ልማት (Forest Development)</h3>
+      <p>This link is authorized to only "የኢትዮጵያ ደን ልማት (ብዙነህ ጅሩ 0911078786 bizunehjiru@gmail.com)"</p>
+      <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/EadzRd9h8ZJAhAvL1Y0gYhkBFTl5dxXzTco7uLDLJGQvsg?e=0lSxgD" target="_blank" rel="noopener noreferrer">Open OneDrive Link 🔒</a>
+    </div>
+
+    <div id="የግብርና ትራንስፎርሜሽን" class="tabcontent">
+      <h3>የግብርና ትራንስፎርሜሽን (Agricultural Transformation)</h3>
+      <p>This link is authorized to only "የግብርና ትራንስፎርሜሽን ኢንስቲትዩት (ተስፋዬ ደጌ 911897723 tesfaye.digie@ata.gov.et)"</p>
+      <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/Ec8Wmj0STPFKts4rOlmB9FsBJveSzBF4XYuYNzAKxnwaPw" target="_blank" rel="noopener noreferrer">Open OneDrive Link 🔒</a>
+    </div>
+
+    <div id="የእንስሳት ጤና" class="tabcontent">
+      <h3>የእንስሳት ጤና ኢንስቲትዩት (Animal Health Institute)</h3>
+      <p>This link is authorized to only "የኢትዮጵያ እንስሳት ጤና ኢንስቲትዩት (ታደሰ ፍቅሩ tadessefikru933@gmail.com(0912209595) and የሺጥላ እሸቴ yeshitilaeshete@gmail.com(0912684301)"</p>
+      <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/EXIhsXKpaQZKu2Pa1jerAxgBPPsn1JM4Ai42bQI2E9X09A?e=jsxWjH" target="_blank" rel="noopener noreferrer">Open OneDrive Link 🔒</a>
+    </div>
+  </div>
+
+  <script>
+    /**
+     * Toggles the display of the content associated with the clicked tab.
+     * @param {Event} evt - The click event object.
+     * @param {string} instName - The ID of the tab content to display.
+     */
+    function openInst(evt, instName) {
+      var i, tabcontent, tablinks;
+
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(instName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    // Set the Ministry of Agriculture tab as active and visible on page load
+    document.addEventListener("DOMContentLoaded", function() {
+      // Find the first button and click it to set the default view
+      const defaultButton = document.querySelector('.tablinks');
+      if (defaultButton) {
+        defaultButton.click();
+      }
+    });
+  </script>
+</body>
+</html>
+```
