@@ -169,6 +169,27 @@
       width: min(1100px, 100%);
       font-size: 12px;
     }
+  
+
+    /* Button clusters */
+    .tab{
+      flex-direction: column;
+      align-items: stretch;
+      gap: 14px;
+    }
+    .cluster-title{
+      font-weight: 700;
+      font-size: 14px;
+      padding: 4px 6px;
+      color: #0b3d1b;
+    }
+    .cluster-buttons{
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
   </style>
 </head>
 
@@ -176,156 +197,53 @@
   <div class="bg-img">
     <div class="container">
       <div class="hero">
-        <h1>የግብርና ሚኒስትር የሚኒስትሩ ፅ/ቢት  ዕቅድ አፈጻጸም መከታተያ</h1>
+        <h1>የግብርና ሚኒስትር የሚኒስትሩ ፅ/ቤት እና መሪ ስራ አስፈፃሚ የስራ ዕቅድ አፈጻጸም መከታተያ</h1>
         <p>Click on the buttons below to access your sector's tracking sheet</p>
       </div>
 
-      <div class="tab" role="tablist" aria-label="ተቋማት ምርጫ">
-        <button class="tablinks" role="tab" aria-controls="Audit" onclick="openInst(event, 'Audit')">Audit</button>
-        <button class="tablinks" role="tab" aria-controls="Ethics" onclick="openInst(event, 'Ethics')">Ethics</button>
-        <button class="tablinks" role="tab" aria-controls="FNO" onclick="openInst(event, 'FNO')">FNO</button>
-        <button class="tablinks" role="tab" aria-controls="FSCO" onclick="openInst(event, 'FSCO')">FSCO</button>
-        <button class="tablinks" role="tab" aria-controls="Legal Service" onclick="openInst(event, 'Legal Service')">Legal Service</button>
-        <button class="tablinks" role="tab" aria-controls="Policy" onclick="openInst(event, 'Policy')">Policy</button>
-        <button class="tablinks" role="tab" aria-controls="PR&C" onclick="openInst(event, 'PR&C')">PR&C</button>
-        <button class="tablinks" role="tab" aria-controls="Protocol" onclick="openInst(event, 'Protocol')">Protocol</button>
-        <!-- <button class="tablinks" role="tab" aria-controls="የግብርና ትራንስፎርሜሽን" onclick="openInst(event, 'የግብርና ትራንስፎርሜሽን')">የግብርና ትራንስፎርሜሽን</button>
-        <button class="tablinks" role="tab" aria-controls="የእንስሳት ጤና" onclick="openInst(event, 'የእንስሳት ጤና')">የእንስሳት ጤና</button> -->
+            <div class="tab" role="tablist" aria-label="ተቋማት ምርጫ">
+      <div class="cluster" role="group" aria-label="Minister Office">
+        <div class="cluster-title"><h1>sectors under the Minister office</h1></div>
+        <div class="cluster-buttons">
+        <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQAWyzSK8J9eTJWIVrfb6GJRASJo0og4Knhy2tHYIT-tnDw?e=Er2mrc" onclick="goToLink(this)">Audit</button>
+        <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQCwaCunKxsnSpnKTHglayn3AaVsYrJjY94PKvTPDs4YM6I?e=NEmGPs" onclick="goToLink(this)">Ethics</button>
+        <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQBJ441W-YlDQrFrM0EwEo-uARFo8pDzUuSJbY3hwKJdqUE?e=H4Btay" onclick="goToLink(this)">Policy</button>
+        <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQBC70X15cBMRL4U58w6tHH0AYSTcG0cPB640e1BMnY6J9s?e=8UjFPf" onclick="goToLink(this)">PR&C</button>
+        <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQBm0bYTwQCYSpxEbC3YNLeWAa59bWHLzjaWnUli582_Z0M?e=bkl3QB" onclick="goToLink(this)">Protocol</button>
+                <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQCOCBED37rVQI5HH3nKEJcMAdCjUsASmWXbPPkn0Xt4qvc?e=DBHKNV" onclick="goToLink(this)">Food and Nutrition</button>
+        <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQDkV7uAnHPgSrqLaYpxnJeKAYdObg6_0uuo-BzH6az1FbQ?e=qjusDx" onclick="goToLink(this)">FSCO</button>
+        <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQCXKZoVgnXzSLvKYHZJ_c8PAejvSd1EoV1oaiE_wYaPxtM?e=aAp64t" onclick="goToLink(this)">Legal Service</button>
+        </div>
       </div>
 
-      <div id="ግብርና ሚኒስቴር" class="tabcontent" role="tabpanel">
-        <h3>Audit</h3>
-        <p class="note">የተቋሙ የአፈጻጸም መከታተያ ሰነድ</p>
-        <div class="auth">
-          <strong>This link is authorized to only</strong><br/>
-          የኢትዮጵያ ግብርና ሚኒስቴር — (this will be updated as per your suggestions)
-        </div>
-        <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/ESTEc1QFFWJPuDHRSlolSWsBF363C-b7-6zEHeT4_zUGKg?e=1mYMNE" target="_blank" rel="noopener">መከታተያ ሰነድ ክፈት (OneDrive)</a>
-      </div>
+      <div class="cluster" role="group" aria-label="Lead Executive Office">
+        <div class="cluster-title"><h1>Sectors under Lead Executive Office </h1></div>
+        <div class="cluster-buttons">
+        <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQAtaSxjowkiS5y3qb_nyajeAbr9SccpTqvnhsv453SzrOs?e=jii0XS" onclick="goToLink(this)">Basic Service</button>
+        <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQCcRVs2a5lqSawnS0Zn0RS0Ady-nODg323t8TNbr6PV1ho?e=T2xWeK" onclick="goToLink(this)">Competency & HR Admin</button>
+        <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQA_6fyugnsjSraNMQb01WnGAS5JKCzmBUBwATpNiwpA2eg?e=RjuKIo" onclick="goToLink(this)">IT</button>
 
-      <div id="ቡናና ሻይ ባለሥልጣን" class="tabcontent" role="tabpanel">
-        <h3>ቡናና ሻይ ባለሥልጣን</h3>
-        <p class="note">Open the tracking sheet</p>
-        <div class="auth">
-          <strong>This link is authorized to only</strong><br/>
-          የኢትዮጵያ ቡናና ሻይ ባለሥልጣን — ስንታየሁ ግርማ (0900065962) — sintayehugirma76@gmail.com
+        <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQAqs1ZnzzRySaT3DLL3u02HAStdAXFr-bqupUyBUQ2tLF4?e=nW7ehp" onclick="goToLink(this)">Organizational Change</button>
+        <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQCX6nauhLkcQ7zLASlvvs6HAUw2yPoiOgmZTx0D3vFDr6U?e=95VeMF" onclick="goToLink(this)">Strategic Affais Executive</button>
+        <button class="tablinks" type="button" data-url="https://1drv.ms/x/c/e63e0be48aa1dd6c/IQDRDepg16O2Q4BzR0FyXQpiATvhNzFKiaTAglUK6mB-42E?e=b0tsDw" onclick="goToLink(this)">Women and Social Affairs</button>
         </div>
-        <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/EXrJ7Lc6vjZKoRvg5dh6ftsBaJz9ZA3k9lzVzbc44H7yIg" target="_blank" rel="noopener">መከታተያ ሰነድ ክፈት (OneDrive)</a>
       </div>
+</div>
 
-      <div id="ግብርና ምርምር" class="tabcontent" role="tabpanel">
-        <h3>ግብርና ምርምር</h3>
-        <p class="note">የተቋሙ የአፈጻጸም መከታተያ ሰነድ</p>
-        <div class="auth">
-          <strong>This link is authorized to only</strong><br/>
-          የኢትዮጵያ ግብርና ምርምር ኢንስቲትዩት — አለሙ አስረስ (0911874066) — alemuasres2016@gmail.com
-        </div>
-        <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/EQlcBEho6RZLihb7iWOX5roBYIPJcQR3zxMZdd-EicJmHA" target="_blank" rel="noopener">መከታተያ ሰነድ ክፈት (OneDrive)</a>
-      </div>
-
-      <div id="ግብርና ባለስልጣን" class="tabcontent" role="tabpanel">
-        <h3>ግብርና ባለስልጣን</h3>
-        <p class="note">የተቋሙ የአፈጻጸም መከታተያ ሰነድ</p>
-        <div class="auth">
-          <strong>This link is authorized to only</strong><br/>
-          የኢትዮጵያ ግብርና ባለስልጣን የግብርና ሬጉላቶሪ — አንማው ልንገረው (0924424072) — animawyehenaw0@gmail.com
-        </div>
-        <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/EYMvJMBn3BZNvgDcPsT_1CUBTiklddvAZzysjVITOMTGAA" target="_blank" rel="noopener">መከታተያ ሰነድ ክፈት (OneDrive)</a>
-      </div>
-
-      <div id="ህብረት ስራ" class="tabcontent" role="tabpanel">
-        <h3>ህብረት ስራ</h3>
-        <p class="note">የተቋሙ የአፈጻጸም መከታተያ ሰነድ</p>
-        <div class="auth">
-          <strong>This link is authorized to only</strong><br/>
-          የኢትዮጵያ ኅብረት ስራ ኮሚሽን — አያልሰው ወርቅነህ (0911060923) — ayalseww@gmail.com
-        </div>
-        <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/EUtXbb6Uig1BjUcUW2l0QoIBOx7EhcT7Tf5F6qurIMnTEQ?e=KQ2JuN" target="_blank" rel="noopener">መከታተያ ሰነድ ክፈት (OneDrive)</a>
-      </div>
-
-      <div id="ብዝሀ ሕይወት" class="tabcontent" role="tabpanel">
-        <h3>ብዝሀ ሕይወት</h3>
-        <p class="note">የተቋሙ የአፈጻጸም መከታተያ ሰነድ</p>
-        <div class="auth">
-          <strong>This link is authorized to only</strong><br/>
-          የኢትዮጵያ ብዝሀ ህይወት ኢንስቲትዩት — Aberaham Assfa (0911464607) — abiab1975@gmail.com<br/>
-          እና Hiwot Befekadu (0947902848) — hiwotnew@gmail.com
-        </div>
-        <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/ETHJCIwAOe5GtPpZVElNDCwBXr1QXdr4ZTcL5Kt1WyFtAQ" target="_blank" rel="noopener">መከታተያ ሰነድ ክፈት (OneDrive)</a>
-      </div>
-
-      <div id="እንስሳት ልማት" class="tabcontent" role="tabpanel">
-        <h3>እንስሳት ልማት</h3>
-        <p class="note">የተቋሙ የአፈጻጸም መከታተያ ሰነድ</p>
-        <div class="auth">
-          <strong>This link is authorized to only</strong><br/>
-          የኢትዮጵያ እንስሳት ልማት ኢንስቲትዩት — ታምሩ ነገራ (0911482605) — tnegera@yahoo.com
-        </div>
-        <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/EUJ3lf9r9jxMlmnQjCGWDSkBQa-BkGtkJTtkxRmIUUm24Q?e=vQMQyd" target="_blank" rel="noopener">መከታተያ ሰነድ ክፈት (OneDrive)</a>
-      </div>
-
-      <div id="ደን ልማት" class="tabcontent" role="tabpanel">
-        <h3>ደን ልማት</h3>
-        <p class="note">የተቋሙ የአፈጻጸም መከታተያ ሰነድ</p>
-        <div class="auth">
-          <strong>This link is authorized to only</strong><br/>
-          የኢትዮጵያ ደን ልማት — ብዙነህ ጅሩ (0911078786) — bizunehjiru@gmail.com
-        </div>
-        <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/EadzRd9h8ZJAhAvL1Y0gYhkBFTl5dxXzTco7uLDLJGQvsg?e=0lSxgD" target="_blank" rel="noopener">መከታተያ ሰነድ ክፈት (OneDrive)</a>
-      </div>
-
-      <div id="የግብርና ትራንስፎርሜሽን" class="tabcontent" role="tabpanel">
-        <h3>የግብርና ትራንስፎርሜሽን</h3>
-        <p class="note">የተቋሙ የአፈጻጸም መከታተያ ሰነድ</p>
-        <div class="auth">
-          <strong>This link is authorized to only</strong><br/>
-          የግብርና ትራንስፎርሜሽን ኢንስቲትዩት — ተስፋዬ ደጌ (911897723) — tesfaye.digie@ata.gov.et
-        </div>
-        <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/Ec8Wmj0STPFKts4rOlmB9FsBJveSzBF4XYuYNzAKxnwaPw" target="_blank" rel="noopener">መከታተያ ሰነድ ክፈት (OneDrive)</a>
-      </div>
-
-      <div id="የእንስሳት ጤና" class="tabcontent" role="tabpanel">
-        <h3>የእንስሳት ጤና ኢንስቲትዩት</h3>
-        <p class="note">የተቋሙ የአፈጻጸም መከታተያ ሰነድ</p>
-        <div class="auth">
-          <strong>This link is authorized to only</strong><br/>
-          የኢትዮጵያ እንስሳት ጤና ኢንስቲትዩት — ታደሰ ፍቅሩ (0912209595) — tadessefikru933@gmail.com<br/>
-          እና የሺጥላ እሸቴ (0912684301) — yeshitilaeshete@gmail.com
-        </div>
-        <a href="https://1drv.ms/x/c/e63e0be48aa1dd6c/EXIhsXKpaQZKu2Pa1jerAxgBPPsn1JM4Ai42bQI2E9X09A?e=jsxWjH" target="_blank" rel="noopener">መከታተያ ሰነድ ክፈት (OneDrive)</a>
-      </div>
-    </div>
 
     <footer>
-      ማስታወሻ፦ ይህ ገጽ የተፈቀደላቸው ተቋማት ብቻ እንዲጠቀሙበት የተዘጋጀ ነው። ማገናኞቹ በOneDrive ላይ ይከፈታሉ።
+      Note:- please use your respective sectors for updating the progress
     </footer>
   </div>
 
   <script>
-    function openInst(evt, instName) {
-      var i, tabcontent, tablinks;
-
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
+    // Redirect to the OneDrive link as soon as a button is clicked
+    function goToLink(btn) {
+      const url = btn?.dataset?.url;
+      if (url) {
+        window.location.href = url; // same tab
       }
-
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-        tablinks[i].setAttribute("aria-selected", "false");
-      }
-
-      document.getElementById(instName).style.display = "block";
-      evt.currentTarget.className += " active";
-      evt.currentTarget.setAttribute("aria-selected", "true");
     }
-
-    // Open the first tab by default
-    window.addEventListener("DOMContentLoaded", function () {
-      var first = document.querySelector(".tablinks");
-      if (first) first.click();
-    });
   </script>
 </body>
 </html>
